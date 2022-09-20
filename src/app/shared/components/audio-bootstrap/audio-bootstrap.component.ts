@@ -1,6 +1,6 @@
 import { Audio2Service } from './../../../services/audio2.service';
 import { StreamState } from './../../../models/stream-state.model';
-import { Component} from '@angular/core';
+import { Component  } from '@angular/core';
 import { File2Service } from 'src/app/services/file2.service';
 
 @Component({
@@ -78,12 +78,12 @@ export class AudioBootstrapComponent {
     return this.currentFile.index === this.files.length - 1;
   }
 
-  onSliderChangeEnd(change: { value: any; }) {
-    this.audio2Service.seekTo(change.value);
+  onSliderChangeEnd(change: any) {
+    this.audio2Service.seekTo(change.target.value);
   }
 
-  onVolumeChange(volume: { value: any; }){
-    this.audio2Service.setVolume(volume.value);
+  onVolumeChange(volume: any){
+    this.audio2Service.setVolume(volume.target.value);
   }
 
 }
